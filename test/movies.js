@@ -11,8 +11,10 @@ describe('/POST /movies/search', () => {
         let Payload = {
             term: "game of thrones",
         };
+
         chai.request(server)
             .post('/movies/search')
+            .set({username: "alex", password: 123})
             .send(Payload)
             .end((err, res) => {
                 res.should.have.status(200);

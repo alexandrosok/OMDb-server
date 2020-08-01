@@ -55,7 +55,7 @@ const searchMovie = async (req, res) => {
                 res.status(400).send({
                     status: HttpResponse.Error,
                     message: "Something went wrong",
-                    err
+                    error: err
                 }).end();
             });
     }
