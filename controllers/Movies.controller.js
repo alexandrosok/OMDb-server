@@ -28,9 +28,8 @@ const searchMovie = async (req, res) => {
     let year = req.body.year;
     let type = req.body.type;
     let term = encodeURIComponent(req.body.term);
-    let result = await getAsync(`${req.body.term}-${type}-${year}`);
+    let result = await getAsync(req.body.term);
 
-    //console.log(`http://www.omdbapi.com/?apikey=${process.env.API_KEY}&t=${term}&y=${year}&type=${type}`);
     if (result) {
         res.status(200).send({
             status: HttpResponse.Success,

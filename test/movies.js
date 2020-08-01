@@ -9,7 +9,7 @@ chai.use(chaiHttp);
 describe('/POST /movies/search', () => {
     it('it should search a movie', (done) => {
         let Payload = {
-            term: "Game of thrones"
+            term: "game of thrones",
         };
         chai.request(server)
             .post('/movies/search')
